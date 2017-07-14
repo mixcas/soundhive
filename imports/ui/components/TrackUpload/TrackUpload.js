@@ -9,7 +9,9 @@ import validate from '../../../modules/validate';
 
 class TrackUpload extends React.Component {
   constructor() {
-    super(props);
+    super();
+
+    this.handleFileOnChange = this.handleFileOnChange.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +34,7 @@ class TrackUpload extends React.Component {
   }
 
   handleFileOnChange() {
+    debugger;
   }
 
   render() {
@@ -45,7 +48,7 @@ class TrackUpload extends React.Component {
               className='form-control'
               name='file'
               ref={file => (this.file = file)}
-              onchange={this.handleFileOnChange}
+              onChange={this.handleFileOnChange}
               placeholder='Select File'
             />
           </FormGroup>

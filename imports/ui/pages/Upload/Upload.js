@@ -7,7 +7,7 @@ import './Upload.scss';
 const Upload = ({ history }) => (
   <div className="NewDocument">
     <h4 className="page-header">Upload New Track</h4>
-    <TrackUpload history={history} />
+    <TrackUpload history={history} client={client} />
   </div>
 );
 

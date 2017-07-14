@@ -5,6 +5,7 @@ import { Grid } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
+import WebTorrent from 'webtorrent/webtorrent.min';
 import Navigation from '../../components/Navigation/Navigation';
 import Authenticated from '../../components/Authenticated/Authenticated';
 import Public from '../../components/Public/Public';
@@ -29,6 +30,9 @@ import ExamplePage from '../../pages/ExamplePage/ExamplePage';
 
 import './App.scss';
 
+// Set WebTorrent
+client = new WebTorrent();
+
 const App = props => (
   <Router>
     {!props.loading ? <div className="App">
@@ -41,7 +45,7 @@ const App = props => (
           <Authenticated exact path="/documents/:_id" component={ViewDocument} {...props} />
           <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...props} />
           <Authenticated exact path="/profile" component={Profile} {...props} />
-          <Authenticated name="stream" path="/stream" component={Stream} {...props} />
+          <Authenticated exact name="stream" path="/stream" component={Stream} {...props} />
           <Authenticated name="upload" path="/upload" component={Upload} {...props} />
           <Public path="/signup" component={Signup} {...props} />
           <Public path="/login" component={Login} {...props} />
