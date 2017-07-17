@@ -20,29 +20,42 @@ Tracks.deny({
 Tracks.schema = new SimpleSchema({
   owner: {
     type: String,
-    label: 'The ID of the user this document belongs to.',
+    label: 'The ID of the user this track belongs to.',
   },
   createdAt: {
     type: String,
-    label: 'The date this document was created.',
+    label: 'The date this track was created.',
     autoValue() {
       if (this.isInsert) return (new Date()).toISOString();
     },
   },
   updatedAt: {
     type: String,
-    label: 'The date this document was last updated.',
+    label: 'The date this track was last updated.',
     autoValue() {
       if (this.isInsert || this.isUpdate) return (new Date()).toISOString();
     },
   },
+  magnetUri: {
+    type: String,
+    label: 'File\'s Magner URI',
+
+  },
   title: {
     type: String,
-    label: 'The title of the document.',
+    label: 'The title of the track.',
   },
-  body: {
+  infoHash: {
     type: String,
-    label: 'The body of the document.',
+    label: 'Torrent hash',
+  },
+  genre: {
+    type: String,
+    label: 'Track genre',
+  },
+  description: {
+    type: String,
+    label: 'Track\'s description',
   },
 });
 
