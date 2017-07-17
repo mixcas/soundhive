@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import TorrentPlayer from '../../components/TorrentPlayer/TorrentPlayer';
 import Tracks from '../../../api/Tracks/Tracks';
 import NotFound from '../NotFound/NotFound';
 import Loading from '../../components/Loading/Loading';
@@ -12,6 +13,7 @@ const renderTrack = (doc, match, history) => (doc ? (
   <div className="TrackSingle">
     <div className="page-header clearfix">
       <h4 className="pull-left">{ doc && doc.title }</h4>
+      <TorrentPlayer torrentId={doc.infoHash} magnetUri={doc.magnetUri} />
     </div>
   </div>
 ) : <NotFound />);
