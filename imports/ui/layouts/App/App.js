@@ -11,6 +11,7 @@ import Public from '../../components/Public/Public';
 import Index from '../../pages/Index/Index';
 import Stream from '../../pages/Stream/Stream';
 import Upload from '../../pages/Upload/Upload';
+import TrackSingle from '../../pages/TrackSingle/TrackSingle';
 import Documents from '../../pages/Documents/Documents';
 import NewDocument from '../../pages/NewDocument/NewDocument';
 import ViewDocument from '../../pages/ViewDocument/ViewDocument';
@@ -31,26 +32,27 @@ import './App.scss';
 
 const App = props => (
   <Router>
-    {!props.loading ? <div className="App">
+    {!props.loading ? <div className='App'>
       <Navigation {...props} />
       <Grid>
         <Switch>
-          <Route exact name="index" path="/" component={Index} />
-          <Authenticated exact path="/documents" component={Documents} {...props} />
-          <Authenticated exact path="/documents/new" component={NewDocument} {...props} />
-          <Authenticated exact path="/documents/:_id" component={ViewDocument} {...props} />
-          <Authenticated exact path="/documents/:_id/edit" component={EditDocument} {...props} />
-          <Authenticated exact path="/profile" component={Profile} {...props} />
-          <Authenticated exact name="stream" path="/stream" component={Stream} {...props} />
-          <Authenticated name="upload" path="/upload" component={Upload} {...props} />
-          <Public path="/signup" component={Signup} {...props} />
-          <Public path="/login" component={Login} {...props} />
-          <Public path="/logout" component={Logout} {...props} />
-          <Route name="recover-password" path="/recover-password" component={RecoverPassword} />
-          <Route name="reset-password" path="/reset-password/:token" component={ResetPassword} />
-          <Route name="terms" path="/terms" component={Terms} />
-          <Route name="privacy" path="/privacy" component={Privacy} />
-          <Route name="examplePage" path="/example-page" component={ExamplePage} />
+          <Route exact name='index' path='/' component={Index} />
+          <Authenticated exact path='/documents' component={Documents} {...props} />
+          <Authenticated exact path='/documents/new' component={NewDocument} {...props} />
+          <Authenticated exact path='/documents/:_id' component={ViewDocument} {...props} />
+          <Authenticated exact path='/documents/:_id/edit' component={EditDocument} {...props} />
+          <Authenticated exact path='/profile' component={Profile} {...props} />
+          <Authenticated exact name='stream' path='/stream' component={Stream} {...props} />
+          <Authenticated name='upload' path='/upload' component={Upload} {...props} />
+          <Authenticated name='track' path='/track/:_id' component={TrackSingle} {...props} />
+          <Public path='/signup' component={Signup} {...props} />
+          <Public path='/login' component={Login} {...props} />
+          <Public path='/logout' component={Logout} {...props} />
+          <Route name='recover-password' path='/recover-password' component={RecoverPassword} />
+          <Route name='reset-password' path='/reset-password/:token' component={ResetPassword} />
+          <Route name='terms' path='/terms' component={Terms} />
+          <Route name='privacy' path='/privacy' component={Privacy} />
+          <Route name='examplePage' path='/example-page' component={ExamplePage} />
           <Route component={NotFound} />
         </Switch>
       </Grid>
