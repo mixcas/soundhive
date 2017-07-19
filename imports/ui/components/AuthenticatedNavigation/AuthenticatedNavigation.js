@@ -10,9 +10,6 @@ const AuthenticatedNavigation = ({ name }) => (
       <LinkContainer to="/stream">
         <NavItem eventKey={1} href="/stream">Stream</NavItem>
       </LinkContainer>
-      <LinkContainer to="/documents">
-        <NavItem eventKey={1} href="/documents">Documents</NavItem>
-      </LinkContainer>
     </Nav>
     <Nav pullRight>
       <LinkContainer to="/upload">

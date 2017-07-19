@@ -15,7 +15,7 @@ const Stream = ({ loading, tracks, match, history }) => (!loading ? (
   <div className="Stream">
     <div className="page-header clearfix">
       <h4 className="pull-left">Stream</h4>
-      <Link className="btn btn-success pull-right" to={`/upload`}>Add track</Link>
+      <Link className="btn btn-success pull-right" to={`/upload`}>Upload track</Link>
     </div>
     {tracks.length ? <Table responsive>
       <thead>
